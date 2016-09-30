@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tag="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_results_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_dark"
+    >
+
+  <include
+      layout="@layout/toolbar_search_activity"
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      />
+
+
+  <searchgrouping.lojika.com.searchgrouping.HeaderFromToWhere
+      android:id="@+id/headerfromtowhere"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/results_header_height"
+      android:layout_below="@id/toolbar"
+      android:background="@color/red"
+      android:paddingLeft="@dimen/horizontal_margin_left_right"
+      android:paddingRight="@dimen/horizontal_margin_left_right"
+      />
+
+  <FrameLayout
+      android:id="@+id/flytContainer"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/headerfromtowhere"
+      >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/default_gray_background"
+        >
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/list"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:overScrollMode="never"
+          />
+
+      <TextView
+          android:id="@+id/groupName"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:background="@color/orange"
+          tools:text="Group Name"
+          android:textSize="20sp"
+          android:gravity="center"
+          />
+
+    </RelativeLayout>
+
+  </FrameLayout>
+
+
+</RelativeLayout>

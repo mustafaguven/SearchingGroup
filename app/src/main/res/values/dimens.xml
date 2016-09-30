@@ -1,0 +1,99 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="horizontal_margin">8dp</dimen>
+    <dimen name="vertical_margin">8dp</dimen>
+
+    <dimen name="horizontal_margin2x">16dp</dimen>
+    <dimen name="vertical_margin2x">16dp</dimen>
+
+    <dimen name="horizontal_margin3x">24dp</dimen>
+    <dimen name="vertical_margin3x">24dp</dimen>
+
+    <!-- home -->
+    <dimen name="horizontal_margin_left_right">18dp</dimen>
+    <dimen name="drawable_padding">20dp</dimen>
+    <dimen name="horizontal_margin_between_images_home">8dp</dimen>
+    <dimen name="horizontal_margin_between_icons">24dp</dimen>
+
+    <!-- map -->
+    <dimen name="horizontal_margin_left_right_map">8dp</dimen>
+    <dimen name="padding_left_search_icon_map">20dp</dimen>
+    <dimen name="padding_right_delete_icon_map">10dp</dimen>
+    <dimen name="drawable_padding_search_icon_map">25dp</dimen>
+    <dimen name="horizontal_margin_between_search_and_pin">10dp</dimen>
+
+    <!-- search results -->
+    <dimen name="horizontal_margin_between_image_and_text">10dp</dimen>
+    <dimen name="horizontal_margin_between_texts">10dp</dimen>
+    <dimen name="horizontal_margin_between_price_tl">2dp</dimen>
+    <dimen name="vertical_margin_between_texts">5dp</dimen>
+    <dimen name="horizontal_margin_left_route">70dp</dimen>
+
+    <dimen name="results_header_height">80dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--<dimen name="activity_horizontal_margin">16dp</dimen>-->
+    <!--<dimen name="activity_vertical_margin">16dp</dimen>-->
+
+    <dimen name="map_toolbar_height">120dp</dimen>
+    <dimen name="map_route_toolbar_height">55dp</dimen>
+
+    <dimen name="pinsGridColumnWidth">70dp</dimen>
+
+    <dimen name="subToolBarHeight">70dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="map_detail_toolbar_height">155dp</dimen>
+
+    <dimen name="trip_detail_photo_size">70dp</dimen>
+
+    <dimen name="user_profile_photo_size">78dp</dimen>
+    <dimen name="mutual_friends">58dp</dimen>
+    <dimen name="map_detail_item_height">34dp</dimen>
+
+    <dimen name="map_bottom_button_height">62dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="keyline_inset_start">72dp</dimen>
+    <dimen name="screen_content_inset_end">16dp</dimen>
+    <dimen name="screen_content_inset_start">16dp</dimen>
+    <dimen name="appbar_elevation">4dp</dimen>
+    <dimen name="dialog_predicted_trip_info_1_padding">20dp</dimen>
+    <dimen name="dialog_predicted_trip_info_1_spacing">20dp</dimen>
+    <dimen name="dialog_content_padding">20dp</dimen>
+    <dimen name="tag_prompt_horizontal_margin">20dp</dimen>
+    <dimen name="view_corner_radius_default">3dp</dimen>
+
+    <dimen name="md_listitem_vertical_margin">12dp</dimen>
+    <dimen name="md_listitem_margin_left">24dp</dimen>
+    <dimen name="md_dialog_frame_margin">24dp</dimen>
+    <dimen name="md_listitem_textsize">16sp</dimen>
+    <dimen name="profile_stats_value_height">35dp</dimen>
+    <dimen name="verify_profile_single_line_item_vertical_padding">30dp</dimen>
+    <dimen name="verify_profile_item_vertical_padding">20dp</dimen>
+    <dimen name="other_user_profile_picture_height">300dp</dimen>
+    <dimen name="other_user_profile_sticky_header_height">80dp</dimen>
+    <dimen name="other_user_profile_picture_and_sticky_header_height">380dp</dimen>
+    <dimen name="other_user_profile_mutual_friends_list_height">170dp</dimen>
+    <dimen name="map_card_photo_size">75dp</dimen>
+    <dimen name="notification_card_photo_size">43dp</dimen>
+    <dimen name="blocked_user_item_photo_size">45dp</dimen>
+    <dimen name="chat_bubble_profile_photo_size">40dp</dimen>
+    <dimen name="drawer_header_profile_photo_size">50dp</dimen>
+    <dimen name="friend_rounded_card_bottom_photo_size">30dp</dimen>
+    <dimen name="friends_rounded_card_user_photo_size">42dp</dimen>
+    <dimen name="trip_detail_passenger_header_driver_photo">75dp</dimen>
+    <dimen name="rate_driver_picture_size">66dp</dimen>
+    <dimen name="invited_friends_item_photo_size">60dp</dimen>
+    <dimen name="my_notification_item_photo_size">50dp</dimen>
+    <dimen name="other_user_profile_vehicle_photo_size">80dp</dimen>
+    <dimen name="other_user_profile_horizontal_view_item_photo_size">80dp</dimen>
+    <dimen name="my_profile_photo_size">130dp</dimen>
+    <dimen name="promotion_friend_clicked_photo_size">120dp</dimen>
+    <dimen name="promotion_earning_profile_photo_size">120dp</dimen>
+    <dimen name="row_search_trip_result_profile_photo_size">70dp</dimen>
+    <dimen name="ln_approved_rides_profile_photo_size">30dp</dimen>
+    <dimen name="rider_share_profile_photo_size">42dp</dimen>
+    <dimen name="item_vehicle_photo_height">250dp</dimen>
+</resources>

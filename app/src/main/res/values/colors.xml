@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="red">#FF5353</color>
+    <color name="red_dark">#E54748</color>
+    <color name="red_bg_trans">#FFE5E5</color>
+    <color name="blue">#20cdc6</color>
+    <color name="blue_dark">#28aba8</color>
+    <color name="accent">#99E54748</color>
+    <color name="green">#1FC8C0</color>
+    <color name="green2">#22D2CA</color>
+    <color name="green_other_user_profile">#20cec6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="dark_gray_text_home">#424E59</color>
+    <color name="gray_secondary_text_home">#B1B6B8</color>
+    <color name="light_gray_bg_home">#F6F6F6</color>
+    <color name="gray_text_home">#B1B6B8</color>
+    <color name="gray_light_text_home">#A2A7AA</color>
+    <color name="dark_gray_text_onboarding">#333D47</color>
+    <color name="dark_gray_text_onboarding_trans">#80333D47</color>
+
+    <color name="gray_text_route">#A2A7AA</color>
+
+    <color name="results_sub_header_bg">#a1a7aa</color>
+
+    <color name="black">#000000</color>
+    <color name="blue_darkest">#333d47</color>
+    <color name="gray_text">#889098</color>
+    <color name="black_text">#333D47</color>
+
+    <color name="sub_tool_bar">#96333D47</color>
+    <color name="map_route_tool_bar">#BF20cec6</color>
+    <color name="sub_tool_bar_without_alpha">#333D47</color>
+
+    <color name="yellow">#ffB400</color>
+    <color name="yellow_dark">#c5bf95</color>
+    <color name="green_dark">#1aa6a0</color>
+
+    <color name="map_detail_toolbar">#CC333D47</color>
+    <color name="map_detail_toolbar_pressed">#cc202933</color>
+    <color name="transparent">#00000000</color>
+    <color name="facebook_blue">#6C80D7</color>
+    <color name="black_overlay">#CC000000</color>
+    <color name="gray_bg_vehicle">#989da2</color>
+    <color name="friends_text">#20CEC6</color>
+    <color name="orange">#F78F1E</color>
+    <color name="preonboard_yellow">#F9F2BD</color>
+
+    <color name="notification_unread">#E7FFFE</color>
+    <color name="notification_spacer">#B1B6B8</color>
+    <color name="login_background">#A2A7AA</color>
+    <color name="green_light">#00d282</color>
+
+    <color name="arc_view_bg_account">#3320CEC6</color>
+    <color name="arc_view_series1_account">#20CEC6</color>
+
+    <color name="text_color_dark">#333D47</color>
+    <color name="text_color_light">#A2A7AA</color>
+
+    <color name="account_color_yellow">#FB9800</color>
+    <color name="seperator_gray">#BDBDBD</color>
+
+    <color name="trip_detail_adapter_no_match_state">@color/black</color>
+    <color name="trip_detail_adapter_joined_match_state">#a2a7aa</color>
+    <color name="trip_detail_adapter_waiting_match_state">#a2a7aa</color>
+    <color name="trip_detail_adapter_accepted_match_state">#333d47</color>
+
+    <color name="background_positive_action">#20CEC6</color>
+    <color name="background_discouraged_action">#FFA2A7AA</color>
+
+    <color name="view_divider">#a2a7aa</color>
+    <color name="trip_detail_passenger_header_opaque_white">#80FFFFFF</color>
+    <color name="predicted_trip">#FFFFB400</color>
+
+    <color name="background_passenger_reject">#FFDFE0E0</color>
+    <color name="drawer_header_background">#f5f5f5</color>
+
+    <color name="default_gray_background">#EAECEC</color>
+    <color name="green_status_bar">#179E97</color>
+    <color name="spacer">#E4E4E4</color>
+    <color name="cpi_account_onboarding_fill_color">#FFA2A7AA</color>
+    <color name="green_status_bar_half_transparent">#80333D47</color>
+    <color name="ride_sentence_location_selection_background">#ECEDEE</color>
+    <color name="dark_turquoise">#FF04DCD4</color>
+    <color name="robins_egg_blue">#FF20CEC6</color>
+    <color name="status_bar_login">#1AA7A0</color>
+    <color name="who_else_coming_seperator_coming">#C4CBCF</color>
+    <color name="what_am_i_waiting_for_bottom_background">#F8F8F8</color>
+    <color name="spotify_green">#2EBD59</color>
+    <color name="twitter_blue">#1DA1F2</color>
+    <color name="twitter_text">#FFB1B7BA</color>
+    <color name="status_bar_splash">#1AA7A0</color>
+
+    <color name="colorPrimary">#1DA1F2</color>
+    <color name="colorPrimaryDark">#FFB1B7BA</color>
+    <color name="colorAccent">#1AA7A0</color>
+
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tag="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+  <ImageView
+
+      android:id="@+id/ic_from_to_there"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/horizontal_margin_between_texts"
+      android:layout_marginTop="@dimen/horizontal_margin_between_texts"
+      android:src="@drawable/ic_navigation_wtow"
+      />
+
+  <TextView
+      android:id="@+id/from"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@id/ic_from_to_there"
+      android:layout_marginTop="-6dp"
+      android:layout_toRightOf="@id/ic_from_to_there"
+      android:singleLine="true"
+      android:text="Göztepe"
+
+      />
+
+  <TextView
+      android:id="@+id/to"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@id/ic_from_to_there"
+      android:layout_marginBottom="-4dp"
+      android:layout_toRightOf="@id/ic_from_to_there"
+      android:text="Kanyon AVM"
+      />
+
+  <TextView
+      android:id="@+id/when"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_alignTop="@id/from"
+      android:textSize="15sp"
+      android:text="Bugün"
+      />
+
+  <TextView
+      android:id="@+id/time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@id/to"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/when"
+      android:textSize="40sp"
+      android:text="18:15"
+      />
+</merge>
