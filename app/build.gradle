@@ -33,4 +33,5 @@ dependencies {
   testCompile 'junit:junit:4.12'
   compile "com.jakewharton:butterknife:$VC_BUTTER_KNIFE"
   apt "com.jakewharton:butterknife-compiler:$VC_BUTTER_KNIFE"
+  compile project(path: ':library')
 }

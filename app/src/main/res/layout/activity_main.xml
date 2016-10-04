@@ -47,16 +47,6 @@
           android:overScrollMode="never"
           />
 
-      <TextView
-          android:id="@+id/groupName"
-          android:layout_width="match_parent"
-          android:layout_height="50dp"
-          android:background="@color/orange"
-          tools:text="Group Name"
-          android:textSize="20sp"
-          android:gravity="center"
-          />
-
     </RelativeLayout>
 
   </FrameLayout>
