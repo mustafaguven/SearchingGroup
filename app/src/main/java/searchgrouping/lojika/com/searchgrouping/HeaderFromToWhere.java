@@ -22,10 +22,10 @@ public class HeaderFromToWhere extends RelativeLayout {
 
     inflater.inflate(R.layout.component_navbar_fromtowhere, this);
 
-    from = (TextView) findViewById(R.id.from);
+/*    from = (TextView) findViewById(R.id.from);
     to = (TextView) findViewById(R.id.to);
     when = (TextView) findViewById(R.id.when);
-    time = (TextView) findViewById(R.id.time);
+    time = (TextView) findViewById(R.id.time);*/
   }
 
   public void setFrom(String from) {

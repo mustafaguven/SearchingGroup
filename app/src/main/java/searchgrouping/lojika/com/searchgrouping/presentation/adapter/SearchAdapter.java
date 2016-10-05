@@ -17,38 +17,56 @@ import searchgrouping.lojika.com.searchgrouping.model.ItemData;
 public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
   List<ItemData> itemDataList;
+  private static final int TYPE_SEARCH_COMPONENT = 1;
+  private static final int TYPE_ITEM = 2;
 
   public SearchAdapter(List<ItemData> list) {
     this.itemDataList = list;
   }
 
+  @Override public int getItemViewType(int position) {
+    if (position == 0) {
+      return TYPE_SEARCH_COMPONENT;
+    } else {
+      return TYPE_ITEM;
+    }
+  }
+
   @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
-        .inflate(R.layout.search_item, parent, false);
-    return new ItemHolder(v);
+    if (viewType == TYPE_SEARCH_COMPONENT) {
+      RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
+          .inflate(R.layout.component_navbar_fromtowhere, parent, false);
+      return new HeaderHolder(v);
+    } else {
+      RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
+          .inflate(R.layout.search_item, parent, false);
+      return new ItemHolder(v);
+    }
   }
 
   @Override public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-    ItemHolder itemHolder = ((ItemHolder) holder);
-    ItemData itemData = itemDataList.get(position);
-    itemHolder.groupName.setVisibility(View.VISIBLE);
-    if (position > 0 && itemData.getGroupName()
-        .contentEquals(itemDataList.get(position - 1).getGroupName())) {
-      itemHolder.groupName.setVisibility(View.GONE);
-    }
+    if (position > 0) {
+      ItemHolder itemHolder = ((ItemHolder) holder);
+      ItemData itemData = itemDataList.get(position);
+      itemHolder.groupName.setVisibility(View.VISIBLE);
+      if (position > 0 && itemData.getGroupName()
+          .contentEquals(itemDataList.get(position - 1).getGroupName())) {
+        itemHolder.groupName.setVisibility(View.GONE);
+      }
 
-    itemHolder.groupName.setText(itemData.getGroupName());
-    itemHolder.image.setImageResource(itemHolder.image.getContext()
-        .getResources()
-        .getIdentifier(itemData.getPictureId(), "drawable",
-            itemHolder.image.getContext().getPackageName()));
+      itemHolder.groupName.setText(itemData.getGroupName());
+      itemHolder.image.setImageResource(itemHolder.image.getContext()
+          .getResources()
+          .getIdentifier(itemData.getPictureId(), "drawable",
+              itemHolder.image.getContext().getPackageName()));
 
-    if (itemData.getGroupName().contentEquals("Cats")) {
-      itemHolder.groupName.setBackgroundColor(
-          ContextCompat.getColor(itemHolder.groupName.getContext(), R.color.green));
-    } else {
-      itemHolder.groupName.setBackgroundColor(
-          ContextCompat.getColor(itemHolder.groupName.getContext(), R.color.gray_bg_vehicle));
+      if (itemData.getGroupName().contentEquals("Cats")) {
+        itemHolder.groupName.setBackgroundColor(
+            ContextCompat.getColor(itemHolder.groupName.getContext(), R.color.green));
+      } else {
+        itemHolder.groupName.setBackgroundColor(
+            ContextCompat.getColor(itemHolder.groupName.getContext(), R.color.gray_bg_vehicle));
+      }
     }
   }
 
@@ -64,6 +82,16 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private ItemHolder(View itemView) {
       super(itemView);
       ButterKnife.bind(this, itemView);
+    }
+  }
+
+  public class HeaderHolder extends RecyclerView.ViewHolder {
+
+
+
+    private HeaderHolder(View itemView) {
+      super(itemView);
+     // ButterKnife.bind(this, itemView);
     }
   }
 }

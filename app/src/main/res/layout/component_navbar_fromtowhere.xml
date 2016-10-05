@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tag="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/results_header_height"
+    android:background="@color/red"
+    android:paddingLeft="@dimen/horizontal_margin_left_right"
+    android:paddingRight="@dimen/horizontal_margin_left_right"
     >
 
   <ImageView
@@ -57,4 +60,4 @@
       android:textSize="40sp"
       android:text="18:15"
       />
-</merge>
+</RelativeLayout>

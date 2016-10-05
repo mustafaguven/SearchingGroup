@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,6 +71,8 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
           groupName.setBackgroundColor(
               ContextCompat.getColor(SearchActivity.this, R.color.gray_bg_vehicle));
         }
+
+        groupName.setVisibility(firstVisibleItemPosition > 0 ? View.VISIBLE : View.GONE);
       }
     });
   }
