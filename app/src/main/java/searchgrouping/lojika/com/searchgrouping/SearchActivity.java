@@ -7,7 +7,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.TextView;
 import butterknife.BindDimen;
 import butterknife.BindView;
@@ -37,12 +36,7 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
     ButterKnife.bind(this);
     generateToolbarAsActionBar(toolbar);
     initRecyclerView();
-    arrangeViews();
     presenter.fetchResult();
-  }
-
-  private void arrangeViews() {
-    groupName.setTranslationY(-groupNameHeaderHeight);
   }
 
   private void initRecyclerView() {
@@ -71,10 +65,7 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
         super.onScrolled(recyclerView, dx, dy);
         totalScrolled += dy;
 
-        //Log.e(TAG, String.valueOf(groupName.getY()));
-
         int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-        //Log.e(TAG, "firstVisibleItem: " + String.valueOf(firstVisibleItemPosition));
         ItemData itemData = responseModel.getItemData().get(firstVisibleItemPosition);
         groupName.setText(itemData.getGroupName());
         if (itemData.getGroupName().contentEquals("Cats")) {
@@ -83,30 +74,19 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
           groupName.setBackgroundColor(
               ContextCompat.getColor(SearchActivity.this, R.color.gray_bg_vehicle));
         }
-
         translateGroupName(totalScrolled);
-        //getVisiblePercantageOfHeaderHeight(totalScrolled);
-        //groupName.setVisibility(firstVisibleItemPosition > 0 ? View.VISIBLE : View.GONE);
       }
     });
   }
 
   private void translateGroupName(int totalScrolled) {
-
-    int percentage = getVisiblePercantageOfHeaderHeight(totalScrolled);
-    float factor = percentage * 0.01f;
-    //Log.e(TAG, String.valueOf(percentage * 0.02f));
+    float factor = getVisiblePercentageOfHeaderHeight(totalScrolled) * 0.01f;
     groupName.setTranslationY(
-        (groupNameHeaderHeight * -1) + groupNameHeaderHeight - (groupNameHeaderHeight * factor));
-    Log.e(TAG, String.valueOf(
-        groupNameHeaderHeight * -1 + groupNameHeaderHeight - (groupNameHeaderHeight * factor)));
+        (groupNameHeaderHeight * -1) + (groupNameHeaderHeight - (groupNameHeaderHeight * factor)));
   }
 
-  private int getVisiblePercantageOfHeaderHeight(int totalScrolled) {
+  private int getVisiblePercentageOfHeaderHeight(int totalScrolled) {
     int delta = headerHeight - totalScrolled;
-    int percantage = Math.max(delta * 100 / headerHeight, 0);
-
-    //Log.e(TAG, String.valueOf(percantage));
-    return percantage;
+    return Math.max(delta * 100 / headerHeight, 0);
   }
 }
