@@ -11,6 +11,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.List;
+import searchgrouping.lojika.com.searchgrouping.HeaderFromToWhere;
 import searchgrouping.lojika.com.searchgrouping.R;
 import searchgrouping.lojika.com.searchgrouping.model.ItemData;
 
@@ -34,8 +35,9 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
   @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     if (viewType == TYPE_SEARCH_COMPONENT) {
-      RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
-          .inflate(R.layout.component_navbar_fromtowhere, parent, false);
+/*      HeaderFromToWhere v = (HeaderFromToWhere) LayoutInflater.from(parent.getContext())
+          .inflate(R.layout.component_navbar_fromtowhere, parent, false);*/
+      HeaderFromToWhere v = new HeaderFromToWhere(parent.getContext(), null);
       return new HeaderHolder(v);
     } else {
       RelativeLayout v = (RelativeLayout) LayoutInflater.from(parent.getContext())
@@ -67,6 +69,9 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         itemHolder.groupName.setBackgroundColor(
             ContextCompat.getColor(itemHolder.groupName.getContext(), R.color.gray_bg_vehicle));
       }
+    } else {
+      HeaderHolder headerHolder = ((HeaderHolder) holder);
+      ((HeaderFromToWhere)(headerHolder.itemView)).setTo("ajkhsdkhasd");
     }
   }
 
@@ -87,11 +92,9 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
   public class HeaderHolder extends RecyclerView.ViewHolder {
 
-
-
-    private HeaderHolder(View itemView) {
-      super(itemView);
-     // ButterKnife.bind(this, itemView);
+    private HeaderHolder(View headerView) {
+      super(headerView);
+      ButterKnife.bind(this, headerView);
     }
   }
 }

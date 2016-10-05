@@ -3,29 +3,23 @@ package searchgrouping.lojika.com.searchgrouping;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HeaderFromToWhere extends RelativeLayout {
 
-  TextView from;
-  TextView to;
-  TextView when;
-  TextView time;
+  @BindView(R.id.from) TextView from;
+  @BindView(R.id.to) TextView to;
+  @BindView(R.id.when) TextView when;
+  @BindView(R.id.time) TextView time;
 
   public HeaderFromToWhere(Context context, AttributeSet attrs) {
-
     super(context, attrs);
-
-    LayoutInflater inflater =
-        (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-    inflater.inflate(R.layout.component_navbar_fromtowhere, this);
-
-/*    from = (TextView) findViewById(R.id.from);
-    to = (TextView) findViewById(R.id.to);
-    when = (TextView) findViewById(R.id.when);
-    time = (TextView) findViewById(R.id.time);*/
+    View view = LayoutInflater.from(context).inflate(R.layout.component_navbar_fromtowhere, this);
+    ButterKnife.bind(this, view);
   }
 
   public void setFrom(String from) {
@@ -43,7 +37,4 @@ public class HeaderFromToWhere extends RelativeLayout {
   public void setTime(String time) {
     this.time.setText(time);
   }
-
-
-
 }
