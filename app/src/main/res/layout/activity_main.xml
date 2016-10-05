@@ -38,24 +38,23 @@
         android:layout_height="match_parent"
         android:background="@color/default_gray_background"
         >
-
       <android.support.v7.widget.RecyclerView
           android:id="@+id/list"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:overScrollMode="never"
           />
-
       <TextView
           android:id="@+id/groupName"
           android:layout_width="match_parent"
-          android:layout_height="50dp"
+          android:layout_height="@dimen/group_name_header_height"
           android:background="@color/orange"
           android:gravity="center"
           android:textSize="20sp"
-          android:visibility="gone"
+          android:visibility="visible"
           tools:text="Group Name"
           />
+
 
     </RelativeLayout>
 

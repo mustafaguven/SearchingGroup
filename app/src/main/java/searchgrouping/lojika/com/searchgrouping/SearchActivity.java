@@ -8,8 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
+import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import searchgrouping.lojika.com.searchgrouping.model.ItemData;
@@ -23,9 +23,12 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
   @BindView(R.id.toolbar) Toolbar toolbar;
   @BindView(R.id.groupName) TextView groupName;
   @BindView(R.id.list) RecyclerView list;
+  @BindDimen(R.dimen.results_header_height) int headerHeight;
+  @BindDimen(R.dimen.group_name_header_height) int groupNameHeaderHeight;
   SearchMVP.Presenter presenter;
   private String TAG = "SearchActivity";
   LinearLayoutManager linearLayoutManager;
+  private int totalScrolled = 0;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -34,7 +37,12 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
     ButterKnife.bind(this);
     generateToolbarAsActionBar(toolbar);
     initRecyclerView();
+    arrangeViews();
     presenter.fetchResult();
+  }
+
+  private void arrangeViews() {
+    groupName.setTranslationY(-groupNameHeaderHeight);
   }
 
   private void initRecyclerView() {
@@ -61,8 +69,12 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
     list.addOnScrollListener(new RecyclerView.OnScrollListener() {
       @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
+        totalScrolled += dy;
+
+        //Log.e(TAG, String.valueOf(groupName.getY()));
+
         int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-        Log.e(TAG, "firstVisibleItem: " + String.valueOf(firstVisibleItemPosition));
+        //Log.e(TAG, "firstVisibleItem: " + String.valueOf(firstVisibleItemPosition));
         ItemData itemData = responseModel.getItemData().get(firstVisibleItemPosition);
         groupName.setText(itemData.getGroupName());
         if (itemData.getGroupName().contentEquals("Cats")) {
@@ -72,8 +84,29 @@ public class SearchActivity extends AppCompatActivity implements SearchMVP.View 
               ContextCompat.getColor(SearchActivity.this, R.color.gray_bg_vehicle));
         }
 
-        groupName.setVisibility(firstVisibleItemPosition > 0 ? View.VISIBLE : View.GONE);
+        translateGroupName(totalScrolled);
+        //getVisiblePercantageOfHeaderHeight(totalScrolled);
+        //groupName.setVisibility(firstVisibleItemPosition > 0 ? View.VISIBLE : View.GONE);
       }
     });
+  }
+
+  private void translateGroupName(int totalScrolled) {
+
+    int percentage = getVisiblePercantageOfHeaderHeight(totalScrolled);
+    float factor = percentage * 0.01f;
+    //Log.e(TAG, String.valueOf(percentage * 0.02f));
+    groupName.setTranslationY(
+        (groupNameHeaderHeight * -1) + groupNameHeaderHeight - (groupNameHeaderHeight * factor));
+    Log.e(TAG, String.valueOf(
+        groupNameHeaderHeight * -1 + groupNameHeaderHeight - (groupNameHeaderHeight * factor)));
+  }
+
+  private int getVisiblePercantageOfHeaderHeight(int totalScrolled) {
+    int delta = headerHeight - totalScrolled;
+    int percantage = Math.max(delta * 100 / headerHeight, 0);
+
+    //Log.e(TAG, String.valueOf(percantage));
+    return percantage;
   }
 }
